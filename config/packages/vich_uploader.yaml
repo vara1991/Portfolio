@@ -4,6 +4,14 @@ vich_uploader:
     mappings:
         img_file:
             # alias qui nous permet d'accéder à nos images depuis le navigateur
-            uri_prefix: '%upload_path%'
+            uri_prefix: '%upload_path_img%'
             # Chemin vers le dossier de stockage
-            upload_destination: '%kernel.project_dir%/public/%upload_path%'
+            upload_destination: '%kernel.project_dir%/public/%upload_path_img%'
+
+        bio_file:
+            uri_prefix: '%upload_path_bio%'
+            upload_destination: '%kernel.project_dir%/public/%upload_path_bio%'
+
+        cv_file:
+            uri_prefix: '%upload_path_cv%'
+            upload_destination: '%kernel.project_dir%/public/%upload_path_cv%'
