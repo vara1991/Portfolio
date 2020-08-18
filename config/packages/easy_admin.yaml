@@ -1,6 +1,24 @@
 easy_admin:
     site_name: 'Portfolio'
     entities:
-        - App\Entity\Project
-        - App\Entity\Photo
+        Project:
+            class: App\Entity\Project
+            list:
+                actions:
+                    - {name: 'delete', icon: 'trash', label: false, css_class: 'btn btn-danger'}
+                    - {name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-warning'}
+        Photo:
+            class: App\Entity\Photo
+            list:
+                actions:
+                    - {name: 'delete', icon: 'trash', label: false, css_class: 'btn btn-danger'}
+                    - {name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-warning'}
+            form:
+                fields:
+                    - { property: 'imgFile', type: 'file', label: 'Image' }
+                    - { property: 'name'}
+                    - { property: 'description'}
+
+
+
 
