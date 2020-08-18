@@ -1,0 +1,6 @@
+easy_admin:
+    site_name: 'Portfolio'
+    entities:
+        - App\Entity\Project
+        - App\Entity\Photo
+
