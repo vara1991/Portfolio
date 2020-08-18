@@ -27,7 +27,7 @@ class Project
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $Team;
+    private $team;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -73,12 +73,12 @@ class Project
 
     public function getTeam(): ?string
     {
-        return $this->Team;
+        return $this->team;
     }
 
-    public function setTeam(?string $Team): self
+    public function setTeam(?string $team): self
     {
-        $this->Team = $Team;
+        $this->team = $team;
 
         return $this;
     }

@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Projet{% endblock %}
+
+{% block body %}
+    <main>
+        <h1>Project</h1>
+        <div class="display-center">
+            <div class="project-container">
+                {% for project in projects %}
+                    <ul>
+                        <li>{{ project.title }}</li>
+                        <li>{{ project.team }}</li>
+                        <li>{{ project.time }}</li>
+                        <li><a href="">{{ project.linkGithub }}</a></li>
+                        <li>{{ project.description }}</li>
+                    </ul>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+{% endblock %}

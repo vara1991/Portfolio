@@ -3,5 +3,15 @@
 {% block title %}A propos{% endblock %}
 
 {% block body %}
-
+    <main>
+        <h1 class="h1">A propos</h1>
+        <div class="display-center">
+            <div class="bio-container">
+                {% for item in bio %}
+                    <img class="bio-img" src="uploads/bio/{{ item.img }}">
+                    <p class="bio-texte">{{ item.bio }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
 {% endblock %}
