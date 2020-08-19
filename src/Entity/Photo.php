@@ -6,6 +6,7 @@ use App\Repository\PhotoRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints as Assert;
 
 
 /**
@@ -28,7 +29,7 @@ class Photo
 
     /**
      * @Vich\UploadableField(mapping="img_file", fileNameProperty="img")
-     * @var File
+     * @Assert\File(maxSize="2147483648")
      */
     private $imgFile;
     

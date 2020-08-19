@@ -11,9 +11,11 @@ easy_admin:
                     - { property: 'id'}
                     - { property: 'img', type: 'image', base_path: '%upload_path_bio%' }
                     - { property: 'updateAt'}
+                    - { property: 'name'}
             form:
                 fields:
                     - { property: 'imgFile', type: 'file', label: 'Image' }
+                    - { property: 'name'}
                     - { property: 'bio'}
         Project:
             class: App\Entity\Project
@@ -21,6 +23,15 @@ easy_admin:
                 actions:
                     - {name: 'delete', icon: 'trash', label: false, css_class: 'btn btn-danger'}
                     - {name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-warning'}
+            form:
+                fields:
+                    - { property: 'title'}
+                    - { property: 'team'}
+                    - { property: 'time'}
+                    - { property: 'github'}
+                    - { property: 'website'}
+                    - { property: 'description', type: 'textarea'}
+                    - { property: 'tool', type_options: { expanded: true, multiple: true }}
         Photo:
             class: App\Entity\Photo
             list:
@@ -48,6 +59,12 @@ easy_admin:
             form:
                 fields:
                     - { property: 'pdfFile', type: 'file', label: 'CV' }
+        Tool:
+            class: App\Entity\Tool
+            list:
+                actions:
+                    - {name: 'delete', icon: 'trash', label: false, css_class: 'btn btn-danger'}
+                    - {name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-warning'}
 
 
 

@@ -4,17 +4,25 @@
 
 {% block body %}
     <main>
-        <h1>Project</h1>
+        <h1>Projet</h1>
         <div class="display-center">
             <div class="project-container">
                 {% for project in projects %}
-                    <ul>
-                        <li>{{ project.title }}</li>
-                        <li>{{ project.team }}</li>
-                        <li>{{ project.time }}</li>
-                        <li><a href="">{{ project.linkGithub }}</a></li>
-                        <li>{{ project.description }}</li>
-                    </ul>
+                    <div class="project-cart">
+                        <h2><a href="{{ path('project_show', {'id':project.id }) }}">{{ project.title }}</a></h2>
+                        <ul>
+                            <li><span class="project-bold">Nombre de personne dans l'équipe :</span> {{ project.team }}</li>
+                            <li><span class="project-bold">Durée du projet :</span> {{ project.time }}</li>
+                            <li><span class="project-bold">Outils utilisés :</span> {% for tool in project.tool %}{{ tool.name }} {% endfor %}</li>
+                            <li><span class="project-bold">Sujet :</span> {{ project.description |nl2br}}</li>
+                        </ul>
+                        <div class="project-link">
+                            <a href="{{ project.github }}" target="_blank">Github</a>
+                            {% if project.website != null %}
+                                <a href="{{ project.website }}" target="_blank">Site</a>
+                            {% endif %}
+                        </div>
+                    </div>
                 {% endfor %}
             </div>
         </div>

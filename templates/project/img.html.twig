@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Projet{% endblock %}
+
+{% block body %}
+    <div class="display-center">
+        <div class="img-container">
+            <h2>{{ photo.name }}</h2>
+            <img src="../../uploads/img/{{ photo.img }}">
+        </div>
+    </div>
+{% endblock %}

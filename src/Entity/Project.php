@@ -37,7 +37,7 @@ class Project
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $link_github;
+    private $github;
 
     /**
      * @ORM\Column(type="text", nullable=true)
@@ -49,9 +49,20 @@ class Project
      */
     private $photos;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Tool::class, inversedBy="projects")
+     */
+    private $tool;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $website;
+
     public function __construct()
     {
         $this->photos = new ArrayCollection();
+        $this->tool = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -95,14 +106,14 @@ class Project
         return $this;
     }
 
-    public function getLinkGithub(): ?string
+    public function getGithub(): ?string
     {
-        return $this->link_github;
+        return $this->github;
     }
 
-    public function setLinkGithub(?string $link_github): self
+    public function setLinkGithub(?string $github): self
     {
-        $this->link_github = $link_github;
+        $this->github = $github;
 
         return $this;
     }
@@ -154,4 +165,43 @@ class Project
     {
         return $this->title;
     }
+
+    /**
+     * @return Collection|Tool[]
+     */
+    public function getTool(): Collection
+    {
+        return $this->tool;
+    }
+
+    public function addTool(Tool $tool): self
+    {
+        if (!$this->tool->contains($tool)) {
+            $this->tool[] = $tool;
+        }
+
+        return $this;
+    }
+
+    public function removeTool(Tool $tool): self
+    {
+        if ($this->tool->contains($tool)) {
+            $this->tool->removeElement($tool);
+        }
+
+        return $this;
+    }
+
+    public function getWebsite(): ?string
+    {
+        return $this->website;
+    }
+
+    public function setWebsite(?string $website): self
+    {
+        $this->website = $website;
+
+        return $this;
+    }
+
 }

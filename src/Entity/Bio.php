@@ -41,6 +41,11 @@ class Bio
      */
     private $updateAt;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $name;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -91,6 +96,18 @@ class Bio
     public function setUpdateAt(?\DateTimeInterface $updateAt): self
     {
         $this->updateAt = $updateAt;
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(?string $name): self
+    {
+        $this->name = $name;
 
         return $this;
     }
