@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'black_ops_oneregular';
+    src: url('../Polices/blackopsone-regular-webfont.woff2') format('woff2'),
+    url('../Polices/blackopsone-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -8,14 +16,17 @@ main{
 }
 
 h1{
+    font-family: black_ops_oneregular;
     padding: 2rem;
     text-align: center;
-    color: black;
+    font-size: 70px;
 }
 
 h2{
+    font-family: black_ops_oneregular;
     text-align: center;
     padding: 2rem;
+    font-size: 40px;
 }
 
 ul{
@@ -27,6 +38,18 @@ ul{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+nav{
+    font-size: 20px;
+    background-color: black;
+    position: fixed;
+}
+
+.nav-ul{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
 }
 
 /* home */
@@ -87,7 +110,7 @@ ul{
 
 .show-project{
     width: 100%;
-    padding-bottom: 2rem;
+    margin-bottom: 2rem;
     display: flex;
     flex-direction: row;
 }
@@ -96,6 +119,7 @@ ul{
     height: 40rem;
     width: 30%;
     margin-right: 2rem;
+    box-shadow: 12px 12px 2px 1px grey;
 }
 
 .show-project-text{
@@ -104,7 +128,11 @@ ul{
     justify-content: center;
     text-align: center;
     width: 70%;
-    border: 2px solid black;
+    padding: 4rem;
+    background: no-repeat center url("../Images/steel.jpg");
+    background-size: cover;
+    font-size: 25px;
+    box-shadow: 12px 12px 2px 1px grey;
 }
 
 /*show img */
