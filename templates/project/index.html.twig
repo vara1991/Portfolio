@@ -9,7 +9,7 @@
             <div class="project-container">
                 {% for project in projects %}
                     <div class="project-cart">
-                        <h2><a href="{{ path('project_show', {'id':project.id }) }}">{{ project.title }}</a></h2>
+                        <h2>{{ project.title }} <a href="{{ path('project_show', {'id':project.id }) }}">(voir le projet)</a></h2>
                         <ul>
                             <li><span class="project-bold">Nombre de personne dans l'équipe :</span> {{ project.team }}</li>
                             <li><span class="project-bold">Durée du projet :</span> {{ project.time }}</li>
@@ -17,9 +17,9 @@
                             <li><span class="project-bold">Sujet :</span> {{ project.description |nl2br}}</li>
                         </ul>
                         <div class="project-link">
-                            <a href="{{ project.github }}" target="_blank">Github</a>
+                            <a href="{{ project.github }}" target="_blank"><span class="project-bold">Github</span></a>
                             {% if project.website != null %}
-                                <a href="{{ project.website }}" target="_blank">Site</a>
+                                <a href="{{ project.website }}" target="_blank"><span class="project-bold">Site</span></a>
                             {% endif %}
                         </div>
                     </div>
