@@ -11,7 +11,7 @@
                     <div class="project-cart">
                         <h2>{{ project.title }} <a href="{{ path('project_show', {'id':project.id }) }}">(voir le projet)</a></h2>
                         <ul>
-                            <li><span class="project-bold">Nombre de personne dans l'équipe :</span> {{ project.team }}</li>
+                            <li><span class="project-bold">Nombre de personnes dans l'équipe :</span> {{ project.team }}</li>
                             <li><span class="project-bold">Durée du projet :</span> {{ project.time }}</li>
                             <li><span class="project-bold">Outils utilisés :</span> {% for tool in project.tool %}{{ tool.name }} {% endfor %}</li>
                             <li><span class="project-bold">Sujet :</span> {{ project.description |nl2br}}</li>
