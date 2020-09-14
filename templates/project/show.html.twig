@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Projet{% endblock %}
+
+{% block body %}
+    <main>
+        <h1>{{ project.title }}</h1>
+        <div class="display-center">
+            <div class="show-project-container">
+                {% for photo in photos %}
+                    <div class="show-project">
+                        <img class="show-project-img" src="../uploads/img/{{ photo.img }}">
+                        <div class="show-project-text">
+                            <h2>{{ photo.name }}</h2>
+                            <p>{{ photo.description |nl2br }}</p>
+                            <a href="{{ path('img_show', {'id':photo.id}) }}">Aller voir la photo</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+{% endblock %}

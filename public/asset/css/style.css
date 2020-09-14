@@ -1,0 +1,261 @@
+@font-face {
+    font-family: 'black_ops_oneregular';
+    src: url('../Polices/blackopsone-regular-webfont.woff2') format('woff2'),
+    url('../Polices/blackopsone-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    min-height: calc(100vh - 62px);
+    background: url("../Images/wall.png");
+}
+
+h1{
+    font-family: black_ops_oneregular;
+    padding: 3rem;
+    text-align: center;
+    font-size: 70px;
+    text-shadow: 5px 5px grey;
+}
+
+h2{
+    font-family: black_ops_oneregular;
+    text-align: center;
+    padding: 2rem;
+    font-size: 40px;
+}
+
+ul{
+    list-style: none;
+}
+
+a {
+    color: grey;
+}
+
+a:hover{
+    color: grey;
+    opacity: 0.5;
+}
+
+.display-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* navbar */
+
+nav{
+    font-size: 20px;
+    background-color: silver;
+    font-weight: bold;
+}
+
+.nav-ul{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+/* home */
+
+.bio-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+}
+
+.bio-img{
+    height: 45rem;
+    width: 50%;
+    margin-right: 2rem;
+    border-radius: 10%;
+    box-shadow: 12px 12px 2px 1px grey;
+}
+
+.bio-texte{
+    width: 50%;
+    height: 45rem;
+    font-size: 20px;
+    background: no-repeat center url("../Images/steel.jpg");
+    background-size: cover;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 12px 12px 2px 1px grey;
+    overflow: auto;
+}
+
+/* project */
+
+.project-container{
+    width: 80%;
+}
+
+.project-cart{
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-bottom: 2rem;
+    background: no-repeat center url("../Images/steel.jpg");
+    background-size: cover;
+    box-shadow: 12px 12px 2px 1px grey;
+    font-size: 25px;
+}
+
+.project-bold{
+    font-weight: bold;
+}
+
+.project-link{
+    display: flex;
+    justify-content: space-around;
+}
+
+.cv-pdf{
+    min-height: calc(100vh - 92px);
+}
+
+/* show-project */
+
+.show-project-container{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.show-project{
+    width: 100%;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.show-project-img{
+    height: 40rem;
+    width: 30%;
+    margin-right: 2rem;
+    box-shadow: 12px 12px 2px 1px grey;
+}
+
+.show-project-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 70%;
+    padding: 4rem;
+    background: no-repeat center url("../Images/steel.jpg");
+    background-size: cover;
+    font-size: 20px;
+    box-shadow: 12px 12px 2px 1px grey;
+}
+
+/* show img */
+
+.btn-back{
+    text-shadow: none;
+}
+
+.img-container{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding-bottom: 2rem;
+}
+
+/* CV */
+
+.cv-container{
+    width: 80%;
+    padding-bottom: 2rem;
+}
+
+/* login */
+
+.log-container{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    background: no-repeat center url("../Images/steel.jpg");
+    background-size: cover;
+    padding: 4rem;
+    border-radius: 2%;
+    box-shadow: 12px 12px 2px 1px grey;
+}
+
+label{
+    font-size: 25px;
+}
+
+input{
+    margin-bottom: 1rem;
+}
+
+#inputPassword, #inputEmail{
+    padding: 1.5rem;
+}
+
+button{
+    margin-top: 2rem;
+    width: 100%;
+    height: 4rem;
+}
+
+@media screen and (max-width: 1400px) {
+    .bio-container{
+        flex-direction: column;
+    }
+
+    .bio-img{
+        margin-bottom: 2rem;
+        width: 90%;
+    }
+
+    .bio-texte{
+        margin-bottom: 2rem;
+        width: 90%;
+    }
+
+    .show-project{
+        flex-direction: column;
+    }
+
+    .show-project-img{
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .show-project-text{
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .log-container{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .nav-ul{
+       flex-direction: column;
+       text-align: center;
+    }
+
+    .log-container{
+        width: 80%;
+    }
+}

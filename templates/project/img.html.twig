@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Projet{% endblock %}
+
+{% block body %}
+    <main>
+        <div class="display-center">
+            <div class="img-container">
+                <h1>{{ photo.name }}  <span class="btn-back"><a href="{{ path('project_show', {'id':photo.project.id}) }}" class="btn btn-dark">Retour</a></span></h1>
+                <img src="../../uploads/img/{{ photo.img }}">
+            </div>
+        </div>
+    </main>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CV{% endblock %}
+
+{% block body %}
+    <main>
+    <h1>CV</h1>
+        <div class="display-center">
+            <div class="cv-container">
+
+
+            {% for item in cv %}
+                <object class="cv-pdf" type="application/pdf" data="uploads/cv/{{ item.pdf }}" width="100%" height="100%">
+                    <a href="uploads/cv/{{ item.pdf }}">Télécharger le fichier</a>
+                </object>
+            {% endfor %}
+            </div>
+        </div>
+    </main>
+{% endblock %}

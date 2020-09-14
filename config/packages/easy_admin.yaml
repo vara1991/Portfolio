@@ -1,0 +1,71 @@
+easy_admin:
+    site_name: 'Portfolio'
+    entities:
+        Bio:
+            class: App\Entity\Bio
+            list:
+                actions:
+                    - {name: 'delete', icon: 'trash', label: false, css_class: 'btn btn-danger'}
+                    - {name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-warning'}
+                fields:
+                    - { property: 'id'}
+                    - { property: 'img', type: 'image', base_path: '%upload_path_bio%' }
+                    - { property: 'updateAt'}
+                    - { property: 'name'}
+            form:
+                fields:
+                    - { property: 'imgFile', type: 'file', label: 'Image' }
+                    - { property: 'name'}
+                    - { property: 'bio'}
+        Project:
+            class: App\Entity\Project
+            list:
+                actions:
+                    - {name: 'delete', icon: 'trash', label: false, css_class: 'btn btn-danger'}
+                    - {name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-warning'}
+            form:
+                fields:
+                    - { property: 'title'}
+                    - { property: 'team'}
+                    - { property: 'time'}
+                    - { property: 'github'}
+                    - { property: 'website'}
+                    - { property: 'description', type: 'textarea'}
+                    - { property: 'tool', type_options: { expanded: true, multiple: true }}
+        Photo:
+            class: App\Entity\Photo
+            list:
+                actions:
+                    - {name: 'delete', icon: 'trash', label: false, css_class: 'btn btn-danger'}
+                    - {name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-warning'}
+                fields:
+                    - { property: 'id'}
+                    - { property: 'img', type: 'image', base_path: '%upload_path_img%' }
+                    - { property: 'name'}
+                    - { property: 'project'}
+                    - { property: 'updatedAt'}
+            form:
+                fields:
+                    - { property: 'imgFile', type: 'file', label: 'Image' }
+                    - { property: 'name'}
+                    - { property: 'project'}
+                    - { property: 'description'}
+        CV:
+            class: App\Entity\Cv
+            list:
+                actions:
+                    - {name: 'delete', icon: 'trash', label: false, css_class: 'btn btn-danger'}
+                    - {name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-warning'}
+            form:
+                fields:
+                    - { property: 'pdfFile', type: 'file', label: 'CV' }
+        Tool:
+            class: App\Entity\Tool
+            list:
+                actions:
+                    - {name: 'delete', icon: 'trash', label: false, css_class: 'btn btn-danger'}
+                    - {name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-warning'}
+
+
+
+

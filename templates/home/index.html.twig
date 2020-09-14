@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}A propos{% endblock %}
+
+{% block body %}
+    <main>
+        <h1>A propos</h1>
+        <div class="display-center">
+            <div class="bio-container">
+                {% for item in bio %}
+                    <img class="bio-img" src="uploads/bio/{{ item.img }}">
+                    <div class="bio-texte">
+                        <h2>{{ item.name }}</h2>
+                        <p>{{ item.bio |nl2br}}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+{% endblock %}
