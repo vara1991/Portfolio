@@ -72,6 +72,7 @@ nav{
     flex-direction: row;
     align-items: center;
     width: 80%;
+    padding-bottom: 2rem;
 }
 
 .bio-img{
