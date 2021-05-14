@@ -11,13 +11,16 @@
                     <div class="project-cart">
                         <h2>{{ project.title }} <a href="{{ path('project_show', {'id':project.id }) }}">(voir le projet)</a></h2>
                         <ul>
+                            <li><span class="project-bold">Entreprise :</span> {{ project.company}}</li>
                             <li><span class="project-bold">Nombre de personnes dans l'équipe :</span> {{ project.team }}</li>
                             <li><span class="project-bold">Durée du projet :</span> {{ project.time }}</li>
                             <li><span class="project-bold">Outils utilisés :</span> {% for tool in project.tool %}{{ tool.name }} {% endfor %}</li>
-                            <li><span class="project-bold">Sujet :</span> {{ project.description |nl2br}}</li>
+                            <li><span class="project-bold">Contexte :</span> {{ project.description |nl2br}}</li>
                         </ul>
                         <div class="project-link">
-                            <a href="{{ project.github }}" target="_blank"><span class="project-bold">Github</span></a>
+                            {% if project.github != null %}
+                                <a href="{{ project.github }}" target="_blank"><span class="project-bold">Github</span></a>
+                            {% endif %}
                             {% if project.website != null %}
                                 <a href="{{ project.website }}" target="_blank"><span class="project-bold">Site</span></a>
                             {% endif %}

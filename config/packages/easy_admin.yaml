@@ -26,6 +26,7 @@ easy_admin:
             form:
                 fields:
                     - { property: 'title'}
+                    - { property: 'company'}
                     - { property: 'team'}
                     - { property: 'time'}
                     - { property: 'github'}
